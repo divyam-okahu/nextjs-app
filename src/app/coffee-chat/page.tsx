@@ -15,7 +15,7 @@ export default function CoffeeChat() {
     setError(null);
     setAnswer(null);
     try {
-      console.log("Sending request....")
+      console.log("Sending request...")
       const res = await fetch("/api/azure-openai-chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
