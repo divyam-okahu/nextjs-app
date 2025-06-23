@@ -4,25 +4,21 @@
   "private": true,
   "scripts": {
     "lint": "next lint",
-    "dev": "NODE_OPTIONS='--require ./src/otel.js' next dev",
+    "dev": "NODE_OPTIONS='--require ./instrumentation.js' next dev",
     "build": "next build",
-    "start": "NODE_OPTIONS='--require ./src/otel.js' next start"
+    "start": "NODE_OPTIONS='--require ./instrumentation.js' next start"
   },
   "dependencies": {
-    "@opentelemetry/auto-instrumentations-node": "^0.40.0",
-    "@opentelemetry/resources": "^1.17.1",
-    "@opentelemetry/sdk-node": "^0.44.0",
-    "@opentelemetry/sdk-trace-base": "^1.17.1",
-    "@opentelemetry/semantic-conventions": "^1.17.1",
-    "monocle2ai": "^0.2.0-beta.1",
     "next": "15.3.3",
     "openai": "^5.5.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "monocle2ai": "https://okahu.jfrog.io/artifactory/okahu-npm-dev-local/monocle2ai/-/monocle2ai-0.2.0-beta.1.tgz"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/hapi__shot": "^4.1.6",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

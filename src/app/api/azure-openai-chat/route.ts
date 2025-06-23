@@ -32,9 +32,15 @@ export async function POST(req: NextRequest) {
       status: 'Success',
       answer: chatCompletion.choices[0].message.content,
     });
-  } catch (e: any) {
+  } catch (e: unknown) {
+    if (e instanceof Error) {
+      return NextResponse.json(
+        { status: 'Error', error: e.message || 'Request failed' },
+        { status: 500 }
+      );
+    }
     return NextResponse.json(
-      { status: 'Error', error: e.message || 'Request failed' },
+      { status: 'Error', error: 'Unknown error occurred' },
       { status: 500 }
     );
   }
@@ -57,9 +63,15 @@ export async function GET() {
       status: 'Success',
       answer: chatCompletion.choices[0].message.content,
     });
-  } catch (e: any) {
+  } catch (e: unknown) {
+    if (e instanceof Error) {
+      return NextResponse.json(
+        { status: 'Error', error: e.message || 'Request failed' },
+        { status: 500 }
+      );
+    }
     return NextResponse.json(
-      { status: 'Error', error: e.message || 'Request failed' },
+      { status: 'Error', error: 'Unknown error occurred' },
       { status: 500 }
     );
   }
