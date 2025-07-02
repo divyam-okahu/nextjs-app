@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "lint": "next lint",
-    "dev": "NODE_OPTIONS='--require ./scripts/instrumentation.js' next dev",
-    "build": "node scripts/patch.js &&  NODE_OPTIONS='--require ./scripts/instrumentation.js' next build",
-    "start": "node scripts/patch.js &&  NODE_OPTIONS='--require ./scripts/instrumentation.js' next start"
+    "dev": " next dev",
+    "build": "node scripts/patch.js && next build",
+    "start": "node scripts/patch.js && next start"
   },
   "dependencies": {
     "import-in-the-middle": "^1.13.0",
@@ -14,7 +14,7 @@
     "openai": "^5.5.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "monocle2ai": "https://okahu.jfrog.io/artifactory/okahu-npm-dev-local/monocle2ai/-/monocle2ai-0.2.0-beta.11-vercel.tgz",
+    "monocle2ai": "https://okahu.jfrog.io/artifactory/okahu-npm-dev-local/monocle2ai/-/monocle2ai-0.2.0-beta.12-vercel.tgz",
     "require-in-the-middle": "^7.5.1"
   },
   "devDependencies": {
