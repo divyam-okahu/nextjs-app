@@ -66,6 +66,8 @@ export async function GET() {
       model: process.env.AZURE_OPENAI_API_DEPLOYMENT || "gpt-4o",
     });
 
+    await new Promise((r) => setTimeout(r, 5000));
+
     return NextResponse.json({
       status: "Success",
       answer: chatCompletion.choices[0].message.content,
